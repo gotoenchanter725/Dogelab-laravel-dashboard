@@ -1,0 +1,110 @@
+.copyInput {
+    display: inline-block;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.copied::after {
+    position: absolute;
+    top: 15px;
+    right: 12%;
+    width: 100px;
+    display: block;
+    content: "COPIED";
+    font-size: 1em;
+    padding: 2px 5px;
+    color: #fff;
+    background-color: #22a;
+    border-radius: 3px;
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: showcopied 1.5s ease;
+}
+
+
+@keyframes showcopied {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateX(40%);
+    }
+    70% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.card .digit-count {
+    display: block;
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 25px;
+}
+
+
+.card .digit-amount-label {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card .digit-amount {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.cookie-modal {
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    bottom: -600px;
+    width: 100%;
+    padding: 30px 100px;
+    transition: bottom 0.5s;
+    z-index: 1000;
+    color: #fff;
+}
+
+.cookie-modal.show {
+    bottom: 0px;
+}
+
+@media(max-width: 767px) {
+    .cookie-modal {
+        padding: 30px 50px;
+    }
+    .cookie-modal .close-btn {
+        font-size: 16px !important;
+    }
+}
+
+@media(max-width: 591px) {
+    .cookie-modal {
+        padding: 30px 30px;
+    }
+}
+
+.cookie-modal .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background: transparent;
+    color: #ffff;
+    border: none;
+    font-size: 24px;
+}
